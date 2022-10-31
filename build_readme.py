@@ -43,3 +43,17 @@ def make_gif(game_name):
 
     # make gif from buffer, down-select frames so gifts are not too large
     imageio.mimsave("./readme_content/"+game_name+".gif", frame_buffer[::4], duration=0.02)
+
+
+# read in the intro
+file1 = open('./readme_content/rmintro.md', 'r')
+readme_lines = file1.readlines()
+
+readme_lines.append("| Image | Name | Description | \n")
+readme_lines.append("| :---: | :---: | :---: |\n")
+
+# sort the game alphabetically
+files = os.listdir("./ai_arcade/predefined_games/")
+files.sort(files)
+
+
